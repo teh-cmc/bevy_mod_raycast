@@ -11,16 +11,17 @@ categories = ["game-engines", "rendering"]
 resolver = "2"
 
 [dependencies]
-bevy = { git = "https://github.com/bevyengine/bevy", branch = "main", default-features = false, features = [
-    "render",
-] }
+bevy = { version = "0.8.0-dev", default-features = false, features = [ "render" ] }
 
 [dev-dependencies]
-bevy = { git = "https://github.com/bevyengine/bevy", branch = "main", default-features = false, features = [
+bevy = { version = "0.8.0-dev", default-features = false, features = [
     "bevy_winit",
     "x11",
 ] }
 criterion = "0.3"
+
+[patch.crates-io]
+bevy = { git = "https://github.com/bevyengine/bevy" }
 
 [[bench]]
 name = "ray_mesh_intersection"
